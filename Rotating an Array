@@ -1,0 +1,24 @@
+class Solution {
+    void leftRotate(int arr[], int d) {
+         int n = arr.length;
+        d = d % n;   // handle case when d > n
+        
+        int[] temp = new int[d];
+        
+        // Step 1: Store first d elements
+        for(int i = 0; i < d; i++){
+            temp[i] = arr[i];
+        }
+        
+        // Step 2: Shift remaining elements to left
+        for(int i = d; i < n; i++){
+            arr[i - d] = arr[i];
+        }
+        
+        // Step 3: Copy temp elements to end
+        for(int i = 0; i < d; i++){
+            arr[n - d + i] = temp[i];
+        }
+        
+    }
+}
