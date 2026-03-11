@@ -1,0 +1,15 @@
+class Solution {
+    public void swapKth(List<Integer> arr, int k) {
+        int n = arr.size();
+
+        // Find positions
+        int pos1 = k - 1;
+        int pos2 = n - k;
+
+        // Swap elements
+        int temp = arr.get(pos1);
+        arr.set(pos1, arr.get(pos2));
+        arr.set(pos2, temp);
+        
+    }
+}
