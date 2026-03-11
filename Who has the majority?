@@ -1,0 +1,21 @@
+class Solution {
+    public int moreFrequent(List<Integer> arr, int x, int y) {
+        int xcount =0;
+        int ycount =0;
+        for(int i=0;i<arr.size();i++){
+            if(arr.get(i)==x){
+                xcount++;
+            }if(arr.get(i)==y){
+                ycount++;
+            }
+        }
+        if(xcount>ycount){
+            return x;
+        }else if(ycount>xcount){
+            return y;
+        }else{
+            return Math.min(x,y);
+        }
+        
+    }
+}
