@@ -1,0 +1,20 @@
+class Solution {
+    int[] getMoreAndLess(int[] arr, int target) {
+         int n = arr.length;
+        
+        int countLessEqual = 0;
+        int countGreaterEqual = 0;
+
+        for(int i = 0; i < n; i++){
+            if(arr[i] <= target){
+                countLessEqual++;
+            }
+            if(arr[i] >= target){
+                countGreaterEqual++;
+            }
+        }
+
+        return new int[]{countLessEqual, countGreaterEqual};
+        
+    }
+}
