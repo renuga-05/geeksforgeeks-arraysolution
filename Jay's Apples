@@ -1,0 +1,15 @@
+
+class Solution {
+    public int minimumApple(int[] arr) {
+        // Step 1: Create a Set to store unique persons
+        Set<Integer> uniquePersons = new HashSet<>();
+
+        // Step 2: Traverse the array and add each person to the Set
+        for (int person : arr) {
+            uniquePersons.add(person);
+        }
+
+        // Step 3: The size of the Set is the minimum apples required
+        return uniquePersons.size();
+    }
+}
