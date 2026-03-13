@@ -1,0 +1,24 @@
+
+class Solution {
+    public int maxProfit(int m, int[] arr) {
+         // Step 1: Sort the array
+        Arrays.sort(arr);
+        
+        int profit = 0;
+        
+        // Step 2: Traverse the array
+        for(int i = 0; i < arr.length && m > 0; i++){
+            
+            // Step 3: Check for useless laptops (negative price)
+            if(arr[i] < 0){
+                profit += -arr[i];   // add absolute value
+                m--;                 // decrease number of laptops we can sell
+            }
+            else{
+                break;               // stop if price becomes non-negative
+            }
+        }
+        
+        return profit;
+    }
+}
