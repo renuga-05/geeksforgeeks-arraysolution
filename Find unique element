@@ -1,0 +1,23 @@
+class Solution {
+    public int findUnique(int k, int[] arr) {
+        
+        // Step 1: Create HashMap to store frequency
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        // Step 2: Count frequency of each element
+        for(int num : arr){
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        
+        // Step 3: Find element whose frequency is not multiple of k
+        for(int key : map.keySet()){
+            if(map.get(key) % k != 0){
+                return key;
+            }
+        }
+        
+        // Step 4: If not found
+        return -1;
+        
+    }
+}
