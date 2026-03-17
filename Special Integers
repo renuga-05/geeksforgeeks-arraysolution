@@ -1,0 +1,17 @@
+
+class Solution {
+    public static int specialIntegers(int n, int[] arr) {
+        HashSet<Integer> set = new HashSet<Integer>();
+        for(int num :  arr){
+            set.add(num);
+        }
+        int count =0;
+        for(int num : set ){
+            if(set.contains(num-1) && set.contains(num+1)){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+        
